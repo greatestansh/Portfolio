@@ -1,0 +1,52 @@
+const AboutSection = () => {
+  const traits = [
+    { icon: "⚔️", name: "Problem Solver", desc: "Debugging since day one" },
+    { icon: "🎮", name: "Indie Gamer", desc: "Celeste, Hollow Knight, Hades" },
+    { icon: "🛠️", name: "Tinkerer", desc: "Always building something" },
+    { icon: "📚", name: "Learner", desc: "Engineering fundamentals" },
+    { icon: "🎨", name: "Pixel Art Fan", desc: "Retro aesthetics enthusiast" },
+    { icon: "🤝", name: "Team Player", desc: "Collaborative projects" },
+  ];
+
+  return (
+    <section id="about" className="py-20 px-4 max-w-5xl mx-auto">
+      <h2 className="scroll-reveal font-pixel text-lg md:text-xl text-primary glow-cyan text-center mb-12">
+        {"// ABOUT_ME"}
+      </h2>
+
+      {/* Dialog box */}
+      <div className="scroll-reveal pixel-border bg-card p-6 md:p-8 mb-10 max-w-2xl mx-auto">
+        <p className="font-pixel text-[8px] text-secondary mb-3">CHARACTER BIO:</p>
+        <p className="font-mono text-sm text-foreground leading-relaxed">
+          Hey! I'm a first-year engineering student who's passionate about technology,
+          indie games, and creative problem-solving. When I'm not studying circuits and
+          algorithms, you'll find me exploring pixel-art worlds or building small projects
+          to sharpen my skills. I believe great engineering is like great game design —
+          it's all about crafting elegant solutions to complex problems.
+        </p>
+      </div>
+
+      {/* Traits / Inventory */}
+      <p className="scroll-reveal font-pixel text-[8px] text-secondary text-center mb-6">
+        INVENTORY — CHARACTER TRAITS
+      </p>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+        {traits.map((t, i) => (
+          <div
+            key={i}
+            className="scroll-reveal bg-muted border border-border p-4 hover:border-primary hover:box-glow-cyan transition-all duration-300 group"
+            style={{ transitionDelay: `${i * 80}ms` }}
+          >
+            <span className="text-2xl block mb-2">{t.icon}</span>
+            <p className="font-pixel text-[7px] text-primary group-hover:glow-cyan transition-all">
+              {t.name}
+            </p>
+            <p className="font-mono text-[11px] text-muted-foreground mt-1">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
