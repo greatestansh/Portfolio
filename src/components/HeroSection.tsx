@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import StarField from "./StarField";
 
 const HeroSection = () => {
-  const fullName = "PLAYER ONE";
+  const fullName = "ANSHUL GUPTA 's Portfolio";
   const [displayed, setDisplayed] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   const [typingDone, setTypingDone] = useState(false);

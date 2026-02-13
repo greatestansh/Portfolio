@@ -31,7 +31,7 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <button onClick={() => scrollTo("#hero")} className="font-pixel text-[10px] text-primary glow-cyan">
-          &lt;PLAYER_ONE/&gt;
+          &lt;GREATEST_LEVIATHAN/&gt;
         </button>
 
         {/* Desktop */}

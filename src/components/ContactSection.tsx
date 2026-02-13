@@ -1,9 +1,9 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const links = [
-  { icon: Github, label: "GITHUB", href: "https://github.com" },
-  { icon: Linkedin, label: "LINKEDIN", href: "https://linkedin.com" },
-  { icon: Mail, label: "EMAIL", href: "mailto:hello@example.com" },
+  { icon: Github, label: "GITHUB", href: "https://github.com/greatestansh" },
+  { icon: Linkedin, label: "LINKEDIN", href: "https://www.linkedin.com/in/anshul-gupta-a17b80394/" },
+  { icon: Mail, label: "EMAIL", href: "greatleviathan0@gmail.com" },
 ];
 
 const ContactSection = () => {
@@ -34,10 +34,10 @@ const ContactSection = () => {
       </div>
 
       <p className="scroll-reveal font-mono text-xs text-muted-foreground mt-16">
-        Built with React + Tailwind • Powered by caffeine & pixel dust
+        Built with React + Tailwind 
       </p>
       <p className="font-pixel text-[6px] text-muted-foreground/50 mt-2">
-        © 2026 PLAYER ONE — ALL RIGHTS RESERVED
+        © 2026 GREATEST_LEVIATHAN — ALL RIGHTS RESERVED
       </p>
     </section>
   );

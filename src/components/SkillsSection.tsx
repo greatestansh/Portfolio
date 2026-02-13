@@ -52,7 +52,7 @@ const SkillsSection = () => {
       title: "LANGUAGES",
       skills: [
         { name: "C / C++", level: 65, color: "bg-primary" },
-        { name: "Python", level: 55, color: "bg-primary" },
+        { name: "JAVA", level: 55, color: "bg-primary" },
         { name: "HTML/CSS", level: 70, color: "bg-primary" },
         { name: "JavaScript", level: 45, color: "bg-primary" },
       ],
@@ -62,8 +62,8 @@ const SkillsSection = () => {
       skills: [
         { name: "Git", level: 50, color: "bg-secondary" },
         { name: "VS Code", level: 75, color: "bg-secondary" },
-        { name: "Linux", level: 40, color: "bg-secondary" },
-        { name: "Arduino", level: 35, color: "bg-secondary" },
+        { name: "Linux", level: 40, color: "bg-secondary" }
+        
       ],
     },
     {
@@ -72,6 +72,7 @@ const SkillsSection = () => {
         { name: "React", level: 35, color: "bg-accent" },
         { name: "Tailwind CSS", level: 50, color: "bg-accent" },
         { name: "Node.js", level: 25, color: "bg-accent" },
+        { name: "Express.js", level: 20, color: "bg-accent" }
       ],
     },
   ];

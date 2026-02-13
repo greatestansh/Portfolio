@@ -18,11 +18,17 @@ const AboutSection = () => {
       <div className="scroll-reveal pixel-border bg-card p-6 md:p-8 mb-10 max-w-2xl mx-auto">
         <p className="font-pixel text-[8px] text-secondary mb-3">CHARACTER BIO:</p>
         <p className="font-mono text-sm text-foreground leading-relaxed">
-          Hey! I'm a first-year engineering student who's passionate about technology,
-          indie games, and creative problem-solving. When I'm not studying circuits and
-          algorithms, you'll find me exploring pixel-art worlds or building small projects
-          to sharpen my skills. I believe great engineering is like great game design —
-          it's all about crafting elegant solutions to complex problems.
+          Hi, I’m a first-year B.Tech student in Instrumentation Engineering at IIT Kharagpur.
+          
+
+        </p>
+        <p className="font-mono text-sm text-foreground leading-relaxed">
+          I’ve always liked maths and physics — mostly because they make the world feel less random. I enjoy breaking things down, understanding what’s actually happening underneath, and chasing that moment when something finally makes sense.I also really enjoy programming and DSA.Outside academics, I play a lot of video games. Indie games especially — they actually have a soul and feel intentional. I respect gameplay and content over graphics. I’m also big on desi hip hop.
+
+          I’m currently exploring web development and game development, and I’m excited to see where these interests take me. I’m always open to new opportunities and collaborations, so feel free to reach out if you want to connect!
+        </p>
+        <p className="font-pixel text-[8px] text-muted-foreground mt-4">
+          "Are you not entertained?" - Maximus Decimus Meridius
         </p>
       </div>
 
