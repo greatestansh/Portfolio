@@ -1,28 +1,18 @@
 const projects = [
   {
-    title: "PIXEL QUEST",
-    desc: "A 2D platformer prototype built with Pygame. Features pixel art sprites, basic physics, and level design.",
-    tech: ["Python", "Pygame"],
+    title: "BLOCKCHAIN IMPLEMENTATION",
+    desc: "A blockchain implementation built with JavaScript. Features block creation, proof-of-work consensus, and transaction validation.",
+    tech: ["JavaScript", "Cryptography", "Data Structures"],
     status: "COMPLETE",
+    link: "https://github.com/greatestansh/minimal-blockchain-js"
   },
   {
-    title: "RETRO CALC",
-    desc: "A terminal-based calculator with a retro UI using ncurses. Supports scientific operations.",
-    tech: ["C++", "ncurses"],
+    title: "REACT APP",
+    desc: "My first coding project built with React. A simple application that served as my introduction to web development and React fundamentals.",
+    tech: ["React", "JavaScript", "CSS"],
     status: "COMPLETE",
-  },
-  {
-    title: "WEATHER HUD",
-    desc: "A weather dashboard that fetches real-time data and displays it with a retro game HUD aesthetic.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    status: "IN PROGRESS",
-  },
-  {
-    title: "PORTFOLIO v1",
-    desc: "This very website! A pixel-art themed portfolio built with React and Tailwind CSS.",
-    tech: ["React", "TypeScript", "Tailwind"],
-    status: "LIVE",
-  },
+    link: "https://github.com/greatestansh/react-app"
+  }
 ];
 
 const ProjectsSection = () => {
@@ -58,6 +48,16 @@ const ProjectsSection = () => {
                 </span>
               </div>
               <p className="font-mono text-xs text-muted-foreground mb-4 leading-relaxed">{p.desc}</p>
+              {p.link && (
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block font-pixel text-[7px] px-3 py-2 border border-secondary/50 text-secondary hover:border-secondary hover:text-secondary hover:glow-magenta transition-all mb-4"
+                >
+                  VIEW CODE →
+                </a>
+              )}
               <div className="flex flex-wrap gap-2">
                 {p.tech.map((t) => (
                   <span

@@ -55,6 +55,7 @@ const SkillsSection = () => {
         { name: "JAVA", level: 55, color: "bg-primary" },
         { name: "HTML/CSS", level: 70, color: "bg-primary" },
         { name: "JavaScript", level: 45, color: "bg-primary" },
+        { name: "Solidity", level: 30, color: "bg-primary" },
       ],
     },
     {

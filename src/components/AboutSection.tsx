@@ -1,11 +1,11 @@
 const AboutSection = () => {
   const traits = [
     { icon: "⚔️", name: "Problem Solver", desc: "Debugging since day one" },
-    { icon: "🎮", name: "Indie Gamer", desc: "Celeste, Hollow Knight, Hades" },
+    { icon: "🎮", name: "Indie Gamer", desc: "Silksong, Hollow Knight, Undertale" },
     { icon: "🛠️", name: "Tinkerer", desc: "Always building something" },
     { icon: "📚", name: "Learner", desc: "Engineering fundamentals" },
     { icon: "🎨", name: "Pixel Art Fan", desc: "Retro aesthetics enthusiast" },
-    { icon: "🤝", name: "Team Player", desc: "Collaborative projects" },
+    { icon: "🎵", name: "Desi Hip Hop Head", desc: "Divine, Emiway, Naezy" },
   ];
 
   return (
@@ -15,7 +15,7 @@ const AboutSection = () => {
       </h2>
 
       {/* Dialog box */}
-      <div className="scroll-reveal pixel-border bg-card p-6 md:p-8 mb-10 max-w-2xl mx-auto">
+      <div className="scroll-reveal pixel-border bg-card p-6 md:p-8 mb-10 max-w-lg mx-auto">
         <p className="font-pixel text-[8px] text-secondary mb-3">CHARACTER BIO:</p>
         <p className="font-mono text-sm text-foreground leading-relaxed">
           Hi, I’m a first-year B.Tech student in Instrumentation Engineering at IIT Kharagpur.
@@ -27,7 +27,7 @@ const AboutSection = () => {
 
           I’m currently exploring web development and game development, and I’m excited to see where these interests take me. I’m always open to new opportunities and collaborations, so feel free to reach out if you want to connect!
         </p>
-        <p className="font-pixel text-[8px] text-muted-foreground mt-4">
+        <p className="font-pixel text-[10px] text-muted-foreground mt-4">
           "Are you not entertained?" - Maximus Decimus Meridius
         </p>
       </div>
@@ -36,7 +36,7 @@ const AboutSection = () => {
       <p className="scroll-reveal font-pixel text-[8px] text-secondary text-center mb-6">
         INVENTORY — CHARACTER TRAITS
       </p>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-lg mx-auto">
         {traits.map((t, i) => (
           <div
             key={i}
