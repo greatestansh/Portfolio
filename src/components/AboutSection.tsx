@@ -36,7 +36,7 @@ const AboutSection = () => {
       <p className="scroll-reveal font-pixel text-[8px] text-secondary text-center mb-6">
         INVENTORY — CHARACTER TRAITS
       </p>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-lg mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
         {traits.map((t, i) => (
           <div
             key={i}
