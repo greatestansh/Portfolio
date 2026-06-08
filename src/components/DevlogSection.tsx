@@ -1,5 +1,6 @@
 import { useState, useEffect, FormEvent } from "react";
 import { Trash2, Lock, Unlock, Plus } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 // ============================================================
 //  DEVLOG PASSWORD — change this string to update your password
@@ -12,22 +13,6 @@ type Entry = {
   title: string;
   body: string;
   date: string; // ISO
-};
-
-const STORAGE_KEY = "devlog_entries_v1";
-
-const loadEntries = (): Entry[] => {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return [];
-    return JSON.parse(raw) as Entry[];
-  } catch {
-    return [];
-  }
-};
-
-const saveEntries = (entries: Entry[]) => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
 };
 
 const formatDate = (iso: string) => {
@@ -47,9 +32,27 @@ const DevlogSection = () => {
   const [showComposer, setShowComposer] = useState(false);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const [saving, setSaving] = useState(false);
+
+  const fetchEntries = async () => {
+    const { data, error } = await supabase
+      .from("devlog_entries")
+      .select("id, title, body, created_at")
+      .order("created_at", { ascending: false });
+    if (!error && data) {
+      setEntries(
+        data.map((d: any) => ({
+          id: d.id,
+          title: d.title,
+          body: d.body,
+          date: d.created_at,
+        }))
+      );
+    }
+  };
 
   useEffect(() => {
-    setEntries(loadEntries());
+    fetchEntries();
   }, []);
 
   const tryUnlock = (e: FormEvent) => {
@@ -70,27 +73,34 @@ const DevlogSection = () => {
     setBody("");
   };
 
-  const addEntry = (e: FormEvent) => {
+  const addEntry = async (e: FormEvent) => {
     e.preventDefault();
-    if (!title.trim() || !body.trim()) return;
-    const next: Entry = {
-      id: crypto.randomUUID(),
-      title: title.trim(),
-      body: body.trim(),
-      date: new Date().toISOString(),
-    };
-    const updated = [next, ...entries];
-    setEntries(updated);
-    saveEntries(updated);
+    if (!title.trim() || !body.trim() || saving) return;
+    setSaving(true);
+    const { data, error } = await supabase
+      .from("devlog_entries")
+      .insert({ title: title.trim(), body: body.trim() })
+      .select("id, title, body, created_at")
+      .single();
+    setSaving(false);
+    if (error || !data) {
+      setPwError("FAILED TO SAVE — TRY AGAIN");
+      return;
+    }
+    setEntries((prev) => [
+      { id: data.id, title: data.title, body: data.body, date: data.created_at },
+      ...prev,
+    ]);
     setTitle("");
     setBody("");
     setShowComposer(false);
   };
 
-  const deleteEntry = (id: string) => {
-    const updated = entries.filter((e) => e.id !== id);
-    setEntries(updated);
-    saveEntries(updated);
+  const deleteEntry = async (id: string) => {
+    const prev = entries;
+    setEntries(entries.filter((e) => e.id !== id));
+    const { error } = await supabase.from("devlog_entries").delete().eq("id", id);
+    if (error) setEntries(prev);
   };
 
   return (
