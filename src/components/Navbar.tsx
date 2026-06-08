@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -9,14 +10,6 @@ const Navbar = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const links = [
-    { label: "ABOUT", href: "#about" },
-    { label: "SKILLS", href: "#skills" },
-    { label: "PROJECTS", href: "#projects" },
-    { label: "DEVLOG", href: "#devlog" },
-    { label: "CONTACT", href: "#contact" },
-  ];
 
   const scrollTo = (href: string) => {
     setMobileOpen(false);
@@ -37,15 +30,36 @@ const Navbar = () => {
 
         {/* Desktop */}
         <div className="hidden md:flex gap-6">
-          {links.map((l) => (
-            <button
-              key={l.href}
-              onClick={() => scrollTo(l.href)}
-              className="font-pixel text-[8px] text-muted-foreground hover:text-primary transition-colors duration-200 hover:glow-cyan"
-            >
-              {l.label}
-            </button>
-          ))}
+          <button
+            onClick={() => scrollTo("#about")}
+            className="font-pixel text-[8px] text-muted-foreground hover:text-primary transition-colors duration-200 hover:glow-cyan"
+          >
+            ABOUT
+          </button>
+          <button
+            onClick={() => scrollTo("#skills")}
+            className="font-pixel text-[8px] text-muted-foreground hover:text-primary transition-colors duration-200 hover:glow-cyan"
+          >
+            SKILLS
+          </button>
+          <button
+            onClick={() => scrollTo("#projects")}
+            className="font-pixel text-[8px] text-muted-foreground hover:text-primary transition-colors duration-200 hover:glow-cyan"
+          >
+            PROJECTS
+          </button>
+          <Link
+            to="/devlog"
+            className="font-pixel text-[8px] text-muted-foreground hover:text-primary transition-colors duration-200 hover:glow-cyan"
+          >
+            DEVLOG
+          </Link>
+          <button
+            onClick={() => scrollTo("#contact")}
+            className="font-pixel text-[8px] text-muted-foreground hover:text-primary transition-colors duration-200 hover:glow-cyan"
+          >
+            CONTACT
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -60,15 +74,37 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-sm border-b border-primary/30 px-4 pb-4">
-          {links.map((l) => (
-            <button
-              key={l.href}
-              onClick={() => scrollTo(l.href)}
-              className="block w-full text-left font-pixel text-[8px] text-muted-foreground hover:text-primary py-2 transition-colors"
-            >
-              {">"} {l.label}
-            </button>
-          ))}
+          <button
+            onClick={() => scrollTo("#about")}
+            className="block w-full text-left font-pixel text-[8px] text-muted-foreground hover:text-primary py-2 transition-colors"
+          >
+            {">"} ABOUT
+          </button>
+          <button
+            onClick={() => scrollTo("#skills")}
+            className="block w-full text-left font-pixel text-[8px] text-muted-foreground hover:text-primary py-2 transition-colors"
+          >
+            {">"} SKILLS
+          </button>
+          <button
+            onClick={() => scrollTo("#projects")}
+            className="block w-full text-left font-pixel text-[8px] text-muted-foreground hover:text-primary py-2 transition-colors"
+          >
+            {">"} PROJECTS
+          </button>
+          <Link
+            to="/devlog"
+            onClick={() => setMobileOpen(false)}
+            className="block w-full text-left font-pixel text-[8px] text-muted-foreground hover:text-primary py-2 transition-colors"
+          >
+            {">"} DEVLOG
+          </Link>
+          <button
+            onClick={() => scrollTo("#contact")}
+            className="block w-full text-left font-pixel text-[8px] text-muted-foreground hover:text-primary py-2 transition-colors"
+          >
+            {">"} CONTACT
+          </button>
         </div>
       )}
     </nav>
