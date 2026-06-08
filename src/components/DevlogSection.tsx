@@ -235,7 +235,7 @@ const DevlogSection = () => {
       </div>
 
       <p className="mt-8 text-center font-pixel text-[7px] text-muted-foreground">
-        // ENTRIES STORED LOCALLY IN YOUR BROWSER
+        // ENTRIES STORED IN THE CLOUD — VISIBLE TO ALL VISITORS
       </p>
     </section>
   );
